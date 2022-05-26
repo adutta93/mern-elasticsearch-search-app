@@ -1,0 +1,19 @@
+.__app {
+	/* display: flex;
+	flex-direction: column; */
+}
+
+.__search_wrapper {
+	/* position: relative; */
+	display: flex;
+	flex-direction: column;
+}
+
+.__card_wrapper {
+	display: flex;
+	justify-content: space-between;
+	margin-top: 40px;
+	width: 100%;
+	grid-template-columns: repeat(2, 1fr);
+	grid-gap: 5em;
+}

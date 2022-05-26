@@ -1,0 +1,13 @@
+.__search_bar {
+	display: block;
+	margin-left: 43%;
+	margin-top: 5%;
+	margin-right: auto;
+	width: 0%;
+}
+
+.__search_bar_input {
+	height: 40px;
+	border-radius: 40px;
+	padding: 10px;
+}

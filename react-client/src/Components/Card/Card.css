@@ -1,0 +1,32 @@
+.__card {
+	width: 300px;
+	box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+	padding: 10px;
+	border-radius: 10px;
+}
+
+.__card_title {
+	margin-top: 10px;
+	margin-bottom: 10px;
+	font-weight: 600;
+}
+
+.__card_notes {
+	margin-top: 20px;
+	margin-bottom: 10px;
+	font-size: 14px;
+}
+
+.__card_tags {
+	display: flex;
+}
+
+._tag {
+	margin-right: 10px;
+	font-size: 10px;
+	border-radius: 10px;
+	border: 1px solid #ff0058;
+	padding: 2px 5px;
+	background-color: #ff0058;
+	color: #ffffff;
+}
