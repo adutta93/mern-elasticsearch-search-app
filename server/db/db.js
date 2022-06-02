@@ -3,9 +3,8 @@ const path = require('path');
 require('dotenv').config({ path: path.resolve(__dirname, '../.env') });
 
 // URI
-// let mongoAtlasUri = process.env.DATABASE_URI;
-let mongoAtlasUri =
-	'mongodb+srv://elastic-db:agVLqxCD3OTtPzFG@cluster0.r4m7mhq.mongodb.net/?retryWrites=true&w=majority';
+let mongoAtlasUri = process.env.DATABASE_URI;
+
 // DB connection
 const connectDB = async () => {
 	try {
