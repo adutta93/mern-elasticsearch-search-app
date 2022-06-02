@@ -23,14 +23,7 @@ const contentSchema = new mongoose.Schema(
 			// required: true,
 			es_indexed: true,
 		},
-		// photo: {
-		// 	type: String,
-		// },
-		// writer: {
-		// 	type: mongoose.Schema.Types.ObjectId,
-		// 	ref: 'User',
-		// 	es_indexed: true,
-		// },
+	
 		contentState: {
 			type: String,
 			default: 'Draft',
