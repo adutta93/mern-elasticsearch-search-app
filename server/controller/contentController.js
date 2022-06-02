@@ -6,15 +6,6 @@ const elasticClient = elastic.Client({
 	host: 'localhost:9200',
 });
 
-// cloudinary config
-cloudinary.config({
-	cloud_name: 'https-theoutreachmedia-com',
-	api_key: '464252331218129',
-	api_secret: '1l5chyx64ZfGE76Zth2MvpEUg30',
-	secure: true,
-});
-// CLOUDINARY_URL=cloudinary://464252331218129:1l5chyx64ZfGE76Zth2MvpEUg30@https-theoutreachmedia-com
-
 /** Elastic Search
  */
 exports.ElasticIndex = (req, res, next) => {
@@ -96,16 +87,11 @@ exports.createContent = async (req, res) => {
 		const notes = req.body.notes;
 		const title = req.body.title;
 		const tags = req.body.tags;
-		// let tempPhoto = req.files.photo;
 
-		// await cloudinary.uploader.upload(tempPhoto.tempFilePath, function (error, result) {
-		// 	tempPhoto = result.url;
-		// });
 		const newContent = new Content({
 			title,
 			tags,
 			notes,
-			// photo: tempPhoto,
 		});
 		const content = await newContent.save();
 		content.on('es-indexed', (err, result) => {
@@ -163,20 +149,4 @@ exports.deleteContent = async (req, res) => {
 	}
 };
 
-exports.approveContent = async (req, res) => {
-	try {
-		const content = await Content.findById(req.params.id);
 
-		if (!content) return res.status(404).json({ msg: 'Post Not Found' });
-		await content.remove();
-		res.json({
-			msg: 'Contact successfully deleted ',
-			id: req.params.id,
-		});
-	} catch (err) {
-		res.status(400).json({
-			status: 'Error',
-			err: err.message,
-		});
-	}
-};
